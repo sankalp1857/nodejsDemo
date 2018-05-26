@@ -1,0 +1,29 @@
+{
+  "name": "nodejsdemo",
+  "version": "1.0.0",
+  "description": "Demo NodeJs app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Monil123/nodejsDemo.git"
+  },
+  "engines": {
+    "node": "8.11.2"
+  },
+  "keywords": [
+    "NodeJs",
+    "demo"
+  ],
+  "author": "Monil Ladha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Monil123/nodejsDemo/issues"
+  },
+  "homepage": "https://github.com/Monil123/nodejsDemo#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
