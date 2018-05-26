@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Monil123/nodejsDemo#readme",
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.16.3"
   }
 }
