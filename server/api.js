@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const Employee = require('../models/employee.js');
 
 const connection = () => { 
-        mongoose.connect('mongodb://localhost:27017/nodejsdemo', (err) => {
+        mongoose.connect('mongodb://monil_ladha96:newpassword123@ds245210.mlab.com:45210/nodejsdemo', (err) => {
         if(!err) {
             console.log("Monodb connection succeeded");
         } else {
