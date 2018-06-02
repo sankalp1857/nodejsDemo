@@ -1,15 +1,33 @@
-const express = require('express');
-const app = express();
-const path = require('path');
-const port = process.env.PORT || 3000;
+var express = require('express');
+var bodyParser = require('body-parser');
+var path = require('path');
+var http = require('http');
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+// Object created for using express
+var app = express();
 
-app.get('/', (req, res) => {
-	res.render('index');
-});
+// Path to other APIs code
+var api = require('./server/api');
 
-app.listen(port, () => {
-	console.log(`Listening on port ${port}`);
-});
+// set body-parser as a middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// path to the dist folder, that was created using 'ng build' to
+// connect the Angular front-end to node back-end
+app.use(express.static(path.join(__dirname, 'dist/nodejsDemo')));
+
+// Default api
+app.use('/', api);
+
+// path to the 'index.html' file inside dist folder
+// this is the landing page of the web-app
+app.get('*'), (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist/nodejsDemo/index.html'));
+}
+
+var port = process.env.PORT || 3000;
+app.set('port', port);
+
+var server = http.createServer(app);
+server.listen(port, () => console.log(`Server is listening on port ${port}`));
