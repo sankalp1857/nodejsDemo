@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'dist/nodejsDemo')));
 // Default api
 app.use('/', api);
 
-// path to the 'index.html' file inside dist folder
+// path to the 'index.html' file inside dist/nodejsDemo folder
 // this is the landing page of the web-app
 app.get('/ping', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/nodejsDemo/index.html'));
