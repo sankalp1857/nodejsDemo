@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // Default api
-app.use('/', api);
+// app.use('/', api);
 
 // path to the 'index.html' file inside dist/nodejsDemo folder
 // this is the landing page of the web-app
