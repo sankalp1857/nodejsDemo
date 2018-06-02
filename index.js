@@ -18,11 +18,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist/nodejsDemo')));
 
 // Default api
-// app.use('/', api);
+app.use('/', api);
 
 // path to the 'index.html' file inside dist folder
 // this is the landing page of the web-app
-app.get('/', (req, res) => {
+app.get('/ping', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/nodejsDemo/index.html'));
 });
 
