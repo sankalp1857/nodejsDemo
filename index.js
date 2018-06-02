@@ -26,7 +26,7 @@ app.get('/ping', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
-var port = process.env.PORT || 3000;
+var port=Number(process.env.PORT || 3000);
 app.set('port', port);
 
 var server = http.createServer(app);
