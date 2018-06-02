@@ -22,10 +22,8 @@ app.use(express.static(path.join(__dirname, 'dist/nodejsDemo')));
 
 // path to the 'index.html' file inside dist folder
 // this is the landing page of the web-app
-app.get('/ping', (req, res) => {
-    // res.sendFile(path.join(__dirname, 'dist/nodejsDemo/index.html'));
-    res.send('Hello, World!!');
-    console.log('sdfsdfsdfdf');
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist/nodejsDemo/index.html'));
 });
 
 var port = process.env.PORT || 3000;
