@@ -26,6 +26,11 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/nodejsDemo/index.html'));
 });
 
+app.post('/add', (req, res) => {
+    var data = req.body.value + 2;
+    res.send(JSON.stringify({ 'value': data}, null, 4));
+});
+
 var port = process.env.PORT || 3000;
 app.set('port', port);
 

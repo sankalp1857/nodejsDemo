@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-// import { Http } from '@angular/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 
@@ -7,15 +7,16 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AppService {
-  result;
+  result: any;
 
-  constructor() {
-
+  constructor(private _http: HttpClient) {
   }
 
-  // getEmployees() {
-  //   return this._http.get('/employees').pipe(
-  //     map(result => this.result = result.json().data)
-  //   );
-  // }
+  addDataTestApi(value: Number) {
+    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    let body = { 'value': value };
+    return this._http.post('http://localhost:3000/add', body, { headers: headers }).pipe(
+      map((res: Response) => this.result = res)
+    );
+  }
 }
